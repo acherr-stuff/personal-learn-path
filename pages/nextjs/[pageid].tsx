@@ -4,7 +4,8 @@ import { PagesLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
-const pagesDirectory = path.join(process.cwd(), 'data', 'test-works')
+
+const pagesDirectory = path.join(process.cwd(), 'data', 'nextjs')
 
 export function getStaticPaths () {
   const paths = getAllFilesIds(pagesDirectory).map(path => ({ params: { pageid: path } }))
@@ -35,7 +36,7 @@ export async function getStaticProps ({ params }: GetStaticPropsType) {
   }
 }
 
-type TestWorkPageType = {
+type InfrastructurePageType = {
   pagesData: {
     date: string
     title: string
@@ -43,7 +44,7 @@ type TestWorkPageType = {
   }
 }
 
-export default function TestWorkPage ({ pagesData }: TestWorkPageType) {
+export default function InfrastructurePage ({ pagesData }: InfrastructurePageType) {
   return (
     <PagesLayout>
       <Head>

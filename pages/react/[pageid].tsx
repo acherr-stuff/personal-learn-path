@@ -4,7 +4,7 @@ import { PagesLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
-const pagesDirectory = path.join(process.cwd(), 'data', 'programming')
+const pagesDirectory = path.join(process.cwd(), 'data', 'react')
 
 export function getStaticPaths () {
   const paths = getAllFilesIds(pagesDirectory).map(path => ({ params: { pageid: path } }))
@@ -35,7 +35,7 @@ export async function getStaticProps ({ params }: GetStaticPropsType) {
   }
 }
 
-type ProgrammingPageType = {
+type TestWorkPageType = {
   pagesData: {
     date: string
     title: string
@@ -43,7 +43,7 @@ type ProgrammingPageType = {
   }
 }
 
-export default function ProgrammingPage ({ pagesData }: ProgrammingPageType) {
+export default function TestWorkPage ({ pagesData }: TestWorkPageType) {
   return (
     <PagesLayout>
       <Head>

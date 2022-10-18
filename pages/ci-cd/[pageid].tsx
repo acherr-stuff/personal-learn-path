@@ -4,8 +4,7 @@ import { PagesLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
-
-const pagesDirectory = path.join(process.cwd(), 'data', 'infrastructure')
+const pagesDirectory = path.join(process.cwd(), 'data', 'ci-cd')
 
 export function getStaticPaths () {
   const paths = getAllFilesIds(pagesDirectory).map(path => ({ params: { pageid: path } }))
@@ -36,7 +35,7 @@ export async function getStaticProps ({ params }: GetStaticPropsType) {
   }
 }
 
-type InfrastructurePageType = {
+type ProgrammingPageType = {
   pagesData: {
     date: string
     title: string
@@ -44,7 +43,7 @@ type InfrastructurePageType = {
   }
 }
 
-export default function InfrastructurePage ({ pagesData }: InfrastructurePageType) {
+export default function ProgrammingPage ({ pagesData }: ProgrammingPageType) {
   return (
     <PagesLayout>
       <Head>

@@ -15,7 +15,7 @@ import { PagesLayout } from '../../layouts'
 import getAllFilesIds from '../../lib/getAllFilesIds'
 import parseMarkdownFile from '../../lib/parseMarkdownFile'
 
-const sectionName = 'programming'
+const sectionName = 'ci-cd'
 const pagesDirectory = path.join(process.cwd(), 'data', sectionName)
 const pageTitle = `Programming Index Page`
 
